@@ -1,1 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../assets/home.css" />
+    <title>myIMDB</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="navigation-items">
+        <h3 class="logo">myIMDB</h3>
+        <ul class="navigation-menu">
+          <li class="menu-item">Home</li>
+          <li class="menu-item">Login</li>
+          <li class="menu-item">Register</li>
+        </ul>
+      </div>
+    </div>
+    <div class="searchfield-container">
+      <input
+        type="search"
+        name="searchmovies"
+        id="searchfield"
+        placeholder="Search..."
+      />
+      <button id="search">Search</button>
+    </div>
+    <div class="movieList-container">
+      <div class="movie-counter"></div>
+      <div class="previous-page"></div>
+      <div class="next-page"></div>
+      <div class="movieList"></div>
+    </div>
+    <script src="../models/Movie.js"></script>
+    <script src="../views/home.js"></script>
+  </body>
+</html>
