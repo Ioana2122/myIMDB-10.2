@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
+    <!-- <link rel="stylesheet" href="../assets/bootstrap.min.css" /> -->
     <title>myIMDB</title>
   </head>
   <body>
@@ -33,12 +34,14 @@
       <button id="search">Search</button>
     </div>
     <div class="movieList-container">
-      <h1 class="movieList-Title">All Movies</h1>
+      <h2 class="movieList-Title">All Movies</h2>
       <div class="movie-counter"></div>
-      <a class="previous-page"></a>
-      <a class="next-page"></a>
       <div class="movieList"></div>
-      <h2 class="pageNumber">-1-</h2>
+        <div class="page-counter">
+          <a class="previous-page"></a>
+          <h2 class="pageNumber">-1-</h2>
+          <a class="next-page"></a>
+        </div>
     </div>
     <dialog id="modal-auth"></dialog>
     <footer>

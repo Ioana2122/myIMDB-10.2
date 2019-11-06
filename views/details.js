@@ -1,4 +1,4 @@
-const displayDetails = (movie, trailer) => {
+const displayDetails = movie => {
   console.log(movie);
   const container = document.getElementById("movie");
   let output = `
@@ -37,12 +37,24 @@ const displayDetails = (movie, trailer) => {
             <h3 class="card-title">Trailer</h3>
             <hr/>
             <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="${trailer.embed}" allowfullscreen></iframe>
+              <iframe class="embed-responsive-item" src="aaa" allowfullscreen></iframe>
             </div>
           </div>
         </div>
       `;
   container.innerHTML = output;
 };
-
+const displayTrailer = trailer => {
+  console.log(trailer);
+  const trailerContainer = document.querySelector(".embed-responsive");
+  console.log(trailerContainer);
+  const trailerSource = document.querySelector(".embed-responsive-item");
+  if (trailer.error) {
+    trailerContainer.innerHTML = "<p>This item has no trailer</p>";
+  } else {
+    trailerSource.setAttribute("src", trailer.embed);
+  }
+  console.log(trailerContainer);
+};
 getMovie();
+getTrailer();

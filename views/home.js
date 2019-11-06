@@ -32,6 +32,7 @@ const removeMovieInfo = container => {
 // Store movie id in session storage and switch url to /details/html
 const showDetailsPage = movie => {
   sessionStorage.setItem("movieID", movie._id);
+  sessionStorage.setItem("imdbID", movie.imdbID);
   window.location = `details.html`;
 };
 
@@ -64,8 +65,14 @@ const disableLink = link => {};
 
 //Event Listeners
 homeBtn.addEventListener("click", () => (window.location = "home.html"));
-loginBtn.addEventListener("click", () => logIn(loginURL, user));
-registerBtn.addEventListener("click", () => registerNewUser(registerURL, user));
+loginBtn.addEventListener("click", () => {
+  const user = new User("Vlad Grecu", "1234", loginURL);
+  user.logInUser();
+});
+registerBtn.addEventListener("click", () => {
+  const user = new User("Test", "1234", registerURL);
+  user.registerNewUser();
+});
 searchfield.addEventListener("keyup", filteredMovies);
 search.addEventListener("click", renderFilteredMovies);
 prevPage.addEventListener("click", () => makeCallToServer(prev));

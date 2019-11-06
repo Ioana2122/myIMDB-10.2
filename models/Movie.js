@@ -6,7 +6,7 @@ const makeCallToServer = async apiURL => {
   movieList.innerHTML = "";
   const request = await fetch(apiURL);
   const data = await request.json();
-
+  console.log(data);
   const results = data.results;
   const page = data.pagination.links;
   const pageNumber = data.pagination.currentPage;
@@ -44,12 +44,21 @@ const getMovie = async () => {
       `https://movies-api-siit.herokuapp.com/movies/${movieID}`
     );
     const movie = await response.json();
+    displayDetails(movie);
+  } catch (error) {
+    console.log("Error getting movie: ", error);
+  }
+};
+
+const getTrailer = async () => {
+  let movieID = sessionStorage.getItem("imdbID");
+  try {
     const trailerResonse = await fetch(
-      `https://imdb-extras.herokuapp.com/${movie.imdbID}/trailer`
+      `https://imdb-extras.herokuapp.com/${movieID}/trailer`
     );
     const trailer = await trailerResonse.json();
-    displayDetails(movie, trailer);
+    displayTrailer(trailer);
   } catch (error) {
-    console.log("Error getting movie :-): ", error);
+    console.log("Error getting trailer", error);
   }
 };

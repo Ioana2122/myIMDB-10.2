@@ -148,23 +148,20 @@ body {
   border-right: 15px solid transparent;
   border-top: 15px solid rgb(27, 27, 27);
 }
+.page-counter {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+}
 .next-page {
-  position: absolute;
-  right: calc(1% + 5px);
-  top: calc(50% - 10px);
-  width: 0;
-  height: 0;
+  margin-left: 10px;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 10px solid rgb(27, 27, 27);
   cursor: pointer;
 }
 .previous-page {
-  position: absolute;
-  left: calc(1% + 5px);
-  top: calc(50% - 10px);
-  width: 0;
-  height: 0;
+  margin-right: 10px;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right: 10px solid rgb(27, 27, 27);

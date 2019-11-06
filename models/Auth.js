@@ -9,36 +9,44 @@ const logoutURL = apiURLl + "/auth/logout";
 //     document.getElementById('modal-auth').showModal();
 //     }
 // )
+class User {
+  constructor(name, password, endpoint) {
+    this.name = name;
+    this.password = password;
+    this.endpoint = endpoint;
+  }
 
-//hardcoded user (for testing purposes only)
-let user = {
-  username: "-=687697846876",
-  password: "1234"
-};
+  registerNewUser() {
+    console.log(this);
+    fetch(this.endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ username: this.name, password: this.password })
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+  }
+
+  logInUser() {
+    console.log(this);
+    fetch(this.endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ username: this.name, password: this.password })
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+  }
+
+  logOut() {}
+}
 
 //register function
-function registerNewUser(url, user) {
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(user)
-  })
-    .then(response => response.json())
-    .then(data => console.log(data));
-}
 
 //login function
-function logIn(url, user) {
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(user)
-  })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error));
-}
+function logIn(url, user) {}
