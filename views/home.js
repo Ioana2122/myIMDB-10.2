@@ -18,7 +18,7 @@ const showMovieInfo = container => {
   const filmInfo = document.createElement("div");
   filmInfo.classList.add("film-info");
   filmInfo.innerHTML = `<div>
-      <h4 class="filmInfo-Title">Click for Details</h4>
+      <h5 class="filmInfo-Title">Click for Details</h5>
       <i class="fas fa-info-circle fa-4x"></i>
     </div>`;
   container.appendChild(filmInfo);
@@ -40,6 +40,7 @@ const showDetailsPage = movie => {
 const createMovieItem = movie => {
   const itemContainer = document.createElement("div");
   itemContainer.classList.add("movie-item");
+  itemContainer.classList.add("card");
   movie.Poster !== "N/A"
     ? (itemContainer.innerHTML = `
       <div>
@@ -49,7 +50,7 @@ const createMovieItem = movie => {
     : (itemContainer.innerHTML = `
     <div>
       <p class="movieItem-Title">${movie.Title}</p>
-      <div class=placeholder></div>
+      <div class="placeholder"></div>
     </div>`);
   movieList.appendChild(itemContainer);
   itemContainer.addEventListener("mouseenter", () =>
@@ -60,8 +61,6 @@ const createMovieItem = movie => {
   );
   itemContainer.addEventListener("click", () => showDetailsPage(movie));
 };
-
-const disableLink = link => {};
 
 //Event Listeners
 homeBtn.addEventListener("click", () => (window.location = "home.html"));

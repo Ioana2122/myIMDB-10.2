@@ -36,8 +36,8 @@ const displayDetails = movie => {
             <hr/>
             <h3 class="card-title">Trailer</h3>
             <hr/>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="aaa" allowfullscreen></iframe>
+            <div class="embed-responsive ">
+              <iframe class="embed-responsive-item overflow-hidden" src=""></iframe>
             </div>
           </div>
         </div>
@@ -52,9 +52,9 @@ const displayTrailer = trailer => {
   if (trailer.error) {
     trailerContainer.innerHTML = "<p>This item has no trailer</p>";
   } else {
+    trailerContainer.classList.add("embed-responsive-16by9");
     trailerSource.setAttribute("src", trailer.embed);
   }
-  console.log(trailerContainer);
 };
 getMovie();
 getTrailer();

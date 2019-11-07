@@ -1,6 +1,14 @@
 let next = null; //nextPage
 let prev = null; //previousPage
 
+class Movie {
+  constructor(movieDetails) {
+    Object.assign(this, movieDetails);
+  }
+  createMovieItem() {
+    console.log("FROM MOVIE ClASS: ", this.Country);
+  }
+}
 // Used to handle servercalls for movies
 const makeCallToServer = async apiURL => {
   movieList.innerHTML = "";
@@ -10,11 +18,15 @@ const makeCallToServer = async apiURL => {
   const results = data.results;
   const page = data.pagination.links;
   const pageNumber = data.pagination.currentPage;
-  console.log(pageNumber);
   pageNr.innerText = ` - ${pageNumber} - `;
   next = page.next;
   prev = page.prev;
-  results.forEach(result => createMovieItem(result));
+  results.forEach(result => {
+    let movie = new Movie(result);
+    console.log("Instanciated Movie: ", movie);
+    createMovieItem(movie);
+    movie.createMovieItem();
+  });
 };
 
 //Search functionality function

@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../assets/home.css" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link
       rel="stylesheet"
       href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
-    <!-- <link rel="stylesheet" href="../assets/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="../assets/bootstrap.min.css" />
     <title>myIMDB</title>
   </head>
   <body>
@@ -34,41 +33,15 @@
       <button id="search">Search</button>
     </div>
     <div class="movieList-container">
-      <h2 class="movieList-Title">All Movies</h2>
-      <div class="movie-counter"></div>
+      <h4 class="movieList-Title">All Movies</h4>
       <div class="movieList"></div>
-        <div class="page-counter">
-          <a class="previous-page"></a>
-          <h2 class="pageNumber">-1-</h2>
-          <a class="next-page"></a>
-        </div>
+      <div class="page-counter">
+        <a class="previous-page"></a>
+        <h5 class="pageNumber">-1-</h5>
+        <a class="next-page"></a>
+      </div>
     </div>
     <dialog id="modal-auth"></dialog>
-    <footer>
-      <sectionOne>
-          <p>About #oursitename</p>
-          <p>Contact us</p>
-          <p>Help</p>
-          <p>Copyright &#169 2009 Domain Name - All Rights Reserved</p>
-      </sectionOne>
-      <sectionTwo>
-          <p>Comming soon</p>
-          <p>Box Office</p>
-          <p>Privacy Policy</p>
-          <p> </p>
-      </sectionTwo>
-      <sectionThree>
-          <p class="header">&#9993 JOIN THE NEWSLETTER</p>
-          <p>Get the freshest reviews, news, and more <br> delivered right to your inbox!</p>
-          <input class="join" type="submit" value="Join the Newsletter"/>
-      </sectionThree>
-      <sectionFour>
-          <p>Follow us: </p>
-          <a href="#" class="fas fa-facebook"></a>
-          <a href="#" class="fas fa-instagram"></a>
-          <a href="#" class="fas fa-youtube"></a>
-      </sectionFour>
-    </footer>
     <script src="../models/Movie.js"></script>
     <script src="../views/home.js"></script>
     <script src="../models/Auth.js"></script>
